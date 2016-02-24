@@ -1,0 +1,22 @@
+import platform
+
+Import('env')
+
+cppLibs = [
+           'boost_program_options',
+           ]
+
+if platform.system() == 'Darwin':
+  cppLibs = [lib + '-mt' for lib in cppLibs]
+
+srcFiles = [
+            'TrafficParameters.cpp',
+            'Event.cpp',
+            'Simulation.cpp',
+            'Intersection.cpp',
+            'TrafficEvent.cpp',
+            ]
+
+env.Program(target = env.targetName, source = srcFiles, LIBS = cppLibs)
+
+env.Install(env.topDir, env.targetName)

@@ -1,0 +1,2 @@
+For each folder: CONT, DEL, SIZE
+Please open the PostProcess_XXX_XXX.xlsm. Run the sheet1 assoricated macro first to perform initial data process. Then run the Module1 associated macro to obtain plots. 

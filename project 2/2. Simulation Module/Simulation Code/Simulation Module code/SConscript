@@ -1,0 +1,20 @@
+import platform
+
+Import('env')
+
+cppLibs = [
+           ]
+
+if platform.system() == 'Darwin':
+  cppLibs = [lib + '-mt' for lib in cppLibs]
+
+srcFiles = [
+            'Queue.cpp',
+            'nodeevent.cpp',
+            'main1.cpp',
+            'Path.cpp'
+            ]
+
+env.Program(target = env.targetName, source = srcFiles, LIBS = cppLibs)
+
+env.Install(env.topDir, env.targetName)
